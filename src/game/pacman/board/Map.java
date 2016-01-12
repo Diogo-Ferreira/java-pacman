@@ -1,4 +1,6 @@
 package game.pacman.board;
+import game.pacman.board.Sprite.Direction;
+import javafx.geometry.BoundingBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelReader;
 import javafx.scene.paint.Color;
@@ -13,7 +15,13 @@ public class Map extends ImageView {
 
     private final int COLLISION_TILE_WIDTH = 8;
     private final int COLLISION_TILE_HEIGHT = 8;
+    private final Color COLLISION_COLOR = Color.web("#2121de");
 
+    /*private final int COINS_PADDING_IN_TILE_UP = 2;
+    private final int COINS_PADDING_IN_TILE_DOWN = 2;
+    private final int COINS_PADDING_IN_TILE_LEFT = 1;
+    private final int COINS_PADDING_IN_TILE_RIGHT = 2;
+    */
     public Map(String imgPath)
     {
         super(imgPath);
@@ -30,20 +38,32 @@ public class Map extends ImageView {
 
                 //Ensuite chaque pixel afin de savoir s'il contient du bleu
                 boolean hasBlue = false;
-                for(int tile_x = map_x; tile_x < map_x + COLLISION_TILE_WIDTH ; tile_x++){
+                for(int tile_x = map_x; tile_x < map_x + COLLISION_TILE_WIDTH && !hasBlue ; tile_x++){
                     for(int tile_y = map_y;tile_y < map_y + COLLISION_TILE_HEIGHT; tile_y++){
-                        if(pixReader.getColor(tile_x,tile_y).equals(Color.web("#2121de"))){
+                        if(pixReader.getColor(tile_x,tile_y).equals(COLLISION_COLOR)){
                             hasBlue = true;
                         }
                     }
                 }
                 if(hasBlue) {
                     mapData[map_y / COLLISION_TILE_HEIGHT][map_x / COLLISION_TILE_WIDTH] = 1;
-                    System.out.println("Hello");
                 }
                 else
                     mapData[map_y/COLLISION_TILE_HEIGHT][map_x/COLLISION_TILE_WIDTH] = 0;
             }
+        }
+    }
+
+
+    public BoundingBox getBoudingBox(double x,double y){
+
+        int xPosInTile = (int) ((x+8) / COLLISION_TILE_WIDTH);
+        int yPosInTile = (int)((y+8) / COLLISION_TILE_HEIGHT);
+
+        if(mapData[yPosInTile][xPosInTile] == 1){
+            return new BoundingBox(x,y,COLLISION_TILE_WIDTH,COLLISION_TILE_WIDTH);
+        }else{
+            return new BoundingBox(0,0,0,0);
         }
     }
 

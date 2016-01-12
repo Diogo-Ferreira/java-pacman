@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.LinkedList;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 public class Board extends Pane {
 	private Collection<Sprite> mobile;
@@ -26,7 +28,36 @@ public class Board extends Pane {
 				pacman = new PacMan(64, 0)
 			}));
 		this.getChildren().addAll(mobile);
+		createCoins();
 		startedMoving = inited = false;
+		//testMapData();
+	}
+
+	//WTF ?
+	private void createCoins(){
+		for(int i =3 ;i < map.getMapData().length-2; i++){
+			for(int j = 3; j< map.getMapData()[0].length-2;j++){
+				if(map.getMapData()[i][j] == 0 && j % 2 == 0 && i % 2 == 0)
+				{
+					getChildren().add(new Coin(j * 8 -8,i *8-8));
+				}
+
+			}
+		}
+	}
+
+	private void testMapData(){
+		for(int i =0 ;i < map.getMapData().length ; i++){
+			for(int j = 0; j< map.getMapData()[0].length;j++){
+				if(map.getMapData()[i][j] == 1)
+				{
+					Rectangle r = new Rectangle(j*8,i*8,8,8);
+					r.setFill(Color.BLUE);
+					getChildren().add(r);
+				}
+
+			}
+		}
 	}
 
 	private void init() {
@@ -59,6 +90,9 @@ public class Board extends Pane {
 		 * Bound bp = pacman.getBoundsInParent(); for (Sprite s : all sprites) {
 		 * Bound bs = s.getBoundsInParent(); if (bp intersect bs) moveBack() ? }
 		 */
+		if(pacman.getBoundsInParent().intersects(map.getBoudingBox(pacman.getLayoutX(),pacman.getLayoutY()))){
+			pacman.moveBack();
+		}
 
 	}
 
