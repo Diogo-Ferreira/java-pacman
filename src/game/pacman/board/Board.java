@@ -1,0 +1,87 @@
+package game.pacman.board;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedList;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.Pane;
+
+public class Board extends Pane {
+	private Collection<Sprite> mobile;
+	private Sprite pacman;
+	private Map map;
+	private boolean startedMoving;
+	private boolean inited;
+
+	public Board() {
+		// only design calls here
+		this.setStyle("-fx-background-color: black;");
+		this.getChildren().add(map = new Map("board.png"));
+		mobile = new LinkedList<Sprite>();
+		mobile.addAll(Arrays.asList(new Sprite[] {
+				new Ghost("inky", 0, 0),
+				new Ghost("pinky", 16, 0),
+				new Ghost("blinky", 32, 0),
+				new Ghost("clyde", 48, 0),
+				pacman = new PacMan(64, 0)
+			}));
+		this.getChildren().addAll(mobile);
+		startedMoving = inited = false;
+	}
+
+	private void init() {
+		// all game initialisation here
+		// called after show(), so all sizes
+		// are fixed
+		for (Sprite s : mobile) {
+			s.setMoveLimits(this.getWidth(), this.getHeight());
+			s.setSpeed(1.);
+		}
+		inited = true;
+	}
+
+	public void animateAndMove() {
+		if (!inited)
+			init();
+
+		for (Sprite s : mobile)
+			s.animate();
+
+		if (!startedMoving)
+			return;
+
+		for (Sprite s : mobile)
+			s.move();
+
+		// check collisions
+		// ....
+		/*
+		 * Bound bp = pacman.getBoundsInParent(); for (Sprite s : all sprites) {
+		 * Bound bs = s.getBoundsInParent(); if (bp intersect bs) moveBack() ? }
+		 */
+
+	}
+
+	public void handleKeyPressed(KeyCode keyCode) {
+		// System.err.println("key press: " + keyCode);
+		startedMoving = true;
+
+		switch (keyCode) {
+		case UP:
+			pacman.setDirection(Sprite.Direction.UP);
+			break;
+		case DOWN:
+			pacman.setDirection(Sprite.Direction.DOWN);
+			break;
+		case LEFT:
+			pacman.setDirection(Sprite.Direction.LEFT);
+			break;
+		case RIGHT:
+			pacman.setDirection(Sprite.Direction.RIGHT);
+			break;
+		default:
+			break;
+		}
+	}
+
+}
