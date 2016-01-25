@@ -1,5 +1,6 @@
 package game.pacman.board;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -20,6 +21,7 @@ public class Board extends Pane {
 	private ArrayList<Sprite> coins;
 	private PacMan pacman;
 	private Map map;
+	private HUD hud;
 	private boolean startedMoving;
 	private boolean inited;
 
@@ -49,6 +51,7 @@ public class Board extends Pane {
 		getChildren().add(posHelper2);
 		this.getChildren().addAll(coins);
 		this.getChildren().addAll(mobile);
+		this.getChildren().add((hud = new HUD(256,288)));
 		map.setLayoutX(0);
 		map.setLayoutY(0);
 		startedMoving = inited = false;
@@ -109,8 +112,9 @@ public class Board extends Pane {
 		//Collisions avec les murs
 		for (Sprite s : mobile) {
 			s.move();
-			if(s.getBounds().intersects(map.getBoudingBox(s.getDirection(), s.getLayoutX(), s.getLayoutY())))
+			if(s.getBounds().intersects(map.getBoudingBox(s.getDirection(), s.getLayoutX(), s.getLayoutY()))) {
 				s.moveBack();
+			}
 		}
 
 		//Collisions pacman et fantomes
@@ -120,7 +124,7 @@ public class Board extends Pane {
 				if(s.getBounds().intersects(pacman.getBounds()))
 				{
 					pacman.decreaseLife();
-					System.out.println(pacman.isAlive());
+					hud.setPacmanLives(pacman.getLives());
 				}
 			}
 		}
@@ -128,13 +132,12 @@ public class Board extends Pane {
 		//Collisions pacman coins
 		for(int i=0;i<coins.size();i++)
 		{
-			if(pacman.getBounds().intersects(coins.get(i).getBoundsInParent()))
+			if(pacman.getBounds().intersects(coins.get(i).getBoundsInParent())) {
 				getChildren().remove(coins.get(i));
+				hud.increaseCoins();
+				coins.remove(i);
+			}
 		}
-
-		posHelper.setLayoutY(pacman.getBounds().getMinY());
-		posHelper.setLayoutX(pacman.getBounds().getMinX());
-		posHelper.toFront();
 	}
 
 

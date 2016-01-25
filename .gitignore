@@ -19,3 +19,8 @@ PacmanFX.iml
 .idea/vcs.xml
 out/production/PacmanFX/game/pacman/Main.class
 out/production/PacmanFX/game/pacman/board/Board$1.class
+.idea/workspace.xml
+.idea/encodings.xml
+out/production/PacmanFX/game/pacman/board/Map.class
+out/production/PacmanFX/game/pacman/board/Board$1.class
+*.class
