@@ -10,3 +10,12 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+PacmanFX.iml
+.idea/encodings.xml
+out/production/PacmanFX/game/pacman/board/Board$1.class
+*.xml
+.idea/workspace.xml
+PacmanFX.iml
+.idea/vcs.xml
+out/production/PacmanFX/game/pacman/Main.class
+out/production/PacmanFX/game/pacman/board/Board$1.class
