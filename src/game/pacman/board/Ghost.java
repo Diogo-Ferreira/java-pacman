@@ -18,4 +18,10 @@ public class Ghost extends Sprite {
 			setDirection(Direction.values()[(int) ((x - .7) * 10 + .5)]);
 	}
 
+	@Override
+	public void moveBack(){
+		super.moveBack();
+		recalculateDirection();
+	}
+
 }

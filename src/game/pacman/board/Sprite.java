@@ -1,5 +1,7 @@
 package game.pacman.board;
 
+import javafx.geometry.BoundingBox;
+import javafx.geometry.Bounds;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 
@@ -67,6 +69,9 @@ public abstract class Sprite extends StackPane {
 		image[direction.value][frame].setVisible(false);
 		direction = newDirection;
 	}
+	public Direction getDirection(){
+		return direction;
+	}
 
 	public void animate() {
 		// animate into different frames
@@ -119,5 +124,11 @@ public abstract class Sprite extends StackPane {
 
 	public String getName() {
 		return name;
+	}
+
+	public Bounds getBounds(){
+		BoundingBox b = new BoundingBox(this.getLayoutX()+4,this.getLayoutY()+4,8,8);
+		return (Bounds)b;
+		//return this.getBoundsInParent();
 	}
 }

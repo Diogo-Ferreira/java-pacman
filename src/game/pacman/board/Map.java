@@ -17,11 +17,6 @@ public class Map extends ImageView {
     private final int COLLISION_TILE_HEIGHT = 8;
     private final Color COLLISION_COLOR = Color.web("#2121de");
 
-    /*private final int COINS_PADDING_IN_TILE_UP = 2;
-    private final int COINS_PADDING_IN_TILE_DOWN = 2;
-    private final int COINS_PADDING_IN_TILE_LEFT = 1;
-    private final int COINS_PADDING_IN_TILE_RIGHT = 2;
-    */
     public Map(String imgPath)
     {
         super(imgPath);
@@ -55,15 +50,33 @@ public class Map extends ImageView {
     }
 
 
-    public BoundingBox getBoudingBox(double x,double y){
+    public BoundingBox getBoudingBox(Direction dir,double x,double y){
+        int x_offset=0;
+        int y_offset=0;
 
-        int xPosInTile = (int) ((x+8) / COLLISION_TILE_WIDTH);
-        int yPosInTile = (int)((y+8) / COLLISION_TILE_HEIGHT);
+        //Correction suivant la direction
+        switch(dir){
+            case RIGHT:
+            case DOWN:
+                x_offset += 8;
+                y_offset += 8;
+                break;
+            case LEFT:
+            case UP:
+                x_offset += 4;
+                y_offset += 4;
+                break;
+        }
 
+        //Position en tiles
+        int xPosInTile = (int) ((x+x_offset) / COLLISION_TILE_WIDTH);
+        int yPosInTile = (int)((y+y_offset) / COLLISION_TILE_HEIGHT);
+
+        //Le pacman va t'il contre un mur ?
         if(mapData[yPosInTile][xPosInTile] == 1){
-            return new BoundingBox(x,y,COLLISION_TILE_WIDTH,COLLISION_TILE_WIDTH);
+            return new BoundingBox(x-4,y-4,8,8);
         }else{
-            return new BoundingBox(0,0,0,0);
+            return new BoundingBox(1000,1000,1,1);
         }
     }
 
