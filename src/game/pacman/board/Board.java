@@ -56,6 +56,8 @@ public class Board extends Pane {
 		map.setLayoutY(0);
 		startedMoving = inited = false;
 		//testMapData();
+
+		hud.showMessage("WIN");
 	}
 
 	/**
@@ -93,10 +95,27 @@ public class Board extends Pane {
 		// called after show(), so all sizes
 		// are fixed
 		for (Sprite s : mobile) {
-			s.setMoveLimits(this.getWidth(), this.getHeight());
+			s.setMoveLimits(this.getWidth()-16, this.getHeight());
 			s.setSpeed(1.);
 		}
 		inited = true;
+	}
+
+	private void resetGame()
+	{
+		startedMoving = inited = false;
+		getChildren().removeAll(mobile);
+		mobile.clear();
+		pacman.setLayoutY(120);
+		pacman.setLayoutX(204);
+		mobile.addAll(Arrays.asList(new Sprite[]{
+				new Ghost("inky", 133, 134),
+				new Ghost("pinky", 124, 134),
+				new Ghost("bl3inky", 115, 134),
+				new Ghost("clyde", 106, 134),
+				pacman
+		}));
+		getChildren().addAll(mobile);
 	}
 
 	public void animateAndMove() {
@@ -114,6 +133,10 @@ public class Board extends Pane {
 			s.move();
 			if(s.getBounds().intersects(map.getBoudingBox(s.getDirection(), s.getLayoutX(), s.getLayoutY()))) {
 				s.moveBack();
+				if(s instanceof PacMan)
+				{
+					((PacMan)s).stopPlayChompSound();
+				}
 			}
 		}
 
@@ -125,6 +148,7 @@ public class Board extends Pane {
 				{
 					pacman.decreaseLife();
 					hud.setPacmanLives(pacman.getLives());
+					resetGame();
 				}
 			}
 		}

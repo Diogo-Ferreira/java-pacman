@@ -1,6 +1,31 @@
 package game.pacman.board;
 
+
+import javafx.scene.media.AudioClip;
+
 public class PacMan extends Sprite {
+
+	private AudioClip chompSound;
+	private int lives = 3;
+
+	public PacMan(double x, double y) {
+		super("pacman", x, y);
+		chompSound = new AudioClip("file:////C:/Users/Diogo/Documents/GitHub/java-pacman/resources/pacman_chomp.wav");
+		chompSound.setCycleCount(AudioClip.INDEFINITE);
+	}
+
+	public void move()
+	{
+		super.move();
+		if(!chompSound.isPlaying())
+			chompSound.play();
+	}
+
+	public void stopPlayChompSound()
+	{
+		chompSound.stop();
+	}
+
 
 	public int getLives() {
 		return lives;
@@ -27,12 +52,6 @@ public class PacMan extends Sprite {
 			return true;
 		else
 			return false;
-	}
-
-	private int lives = 3;
-
-	public PacMan(double x, double y) {
-		super("pacman", x, y);
 	}
 
 }

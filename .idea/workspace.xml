@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/pacman_chomp.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PacmanFX/game/pacman/board/Board$1.class" afterPath="$PROJECT_DIR$/out/production/PacmanFX/game/pacman/board/Board$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PacmanFX/game/pacman/board/Board.class" afterPath="$PROJECT_DIR$/out/production/PacmanFX/game/pacman/board/Board.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PacmanFX/game/pacman/board/PacMan.class" afterPath="$PROJECT_DIR$/out/production/PacmanFX/game/pacman/board/PacMan.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PacmanFX/game/pacman/board/Sprite.class" afterPath="$PROJECT_DIR$/out/production/PacmanFX/game/pacman/board/Sprite.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/pacman/board/Board.java" afterPath="$PROJECT_DIR$/src/game/pacman/board/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/pacman/board/HUD.java" afterPath="$PROJECT_DIR$/src/game/pacman/board/HUD.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/pacman/board/PacMan.java" afterPath="$PROJECT_DIR$/src/game/pacman/board/PacMan.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/pacman/board/Sprite.java" afterPath="$PROJECT_DIR$/src/game/pacman/board/Sprite.java" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -65,11 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/pacman/board/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.2580647">
-              <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.8041237">
+              <caret line="117" column="37" selection-start-line="117" selection-start-column="37" selection-end-line="117" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,34 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scene.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_40/javafx-src.zip!/javafx/scene/Scene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="621" column="21" selection-start-line="621" selection-start-column="21" selection-end-line="621" selection-end-column="21" />
-              <folding>
-                <element signature="e#24420#24421#0" expanded="true" />
-                <element signature="e#24479#24480#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Window.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_40/javafx-src.zip!/javafx/stage/Window.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HUD.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HUD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/pacman/board/HUD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7414501">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/src/game/pacman/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/src/game/pacman/board/Sprite.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,17 +147,11 @@
       <file leaf-file-name="PacMan.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/pacman/board/PacMan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.32258">
+              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
               <folding>
-                <element signature="e#89#90#0" expanded="false" />
-                <element signature="e#108#109#0" expanded="false" />
-                <element signature="e#144#145#0" expanded="false" />
-                <element signature="e#169#170#0" expanded="false" />
-                <element signature="e#238#239#0" expanded="false" />
-                <element signature="e#258#259#0" expanded="false" />
-                <element signature="e#481#482#0" expanded="false" />
-                <element signature="e#509#510#0" expanded="false" />
+                <element signature="e#520#521#0" expanded="true" />
+                <element signature="e#544#545#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -189,6 +171,9 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -199,11 +184,11 @@
       <list>
         <option value="$USER_HOME$/java/jdk1.8.0_60/src.zip!/java/net/URLClassLoader.java" />
         <option value="$PROJECT_DIR$/src/game/pacman/board/Ghost.java" />
+        <option value="$PROJECT_DIR$/src/game/pacman/board/Map.java" />
         <option value="$PROJECT_DIR$/src/game/pacman/board/Sprite.java" />
         <option value="$PROJECT_DIR$/src/game/pacman/board/PacMan.java" />
-        <option value="$PROJECT_DIR$/src/game/pacman/board/Map.java" />
-        <option value="$PROJECT_DIR$/src/game/pacman/board/Board.java" />
         <option value="$PROJECT_DIR$/src/game/pacman/board/HUD.java" />
+        <option value="$PROJECT_DIR$/src/game/pacman/board/Board.java" />
       </list>
     </option>
   </component>
@@ -267,6 +252,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,25 +312,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java-pacman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java-pacman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,10 +332,14 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Diogo\Documents\GitHub\java-pacman\resources" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -661,24 +636,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16597077" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16593887" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1605" y="286" width="1874" height="564" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-32000" y="-32000" width="1696" height="1026" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15154749" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16703057" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16703057" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -691,7 +667,6 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294766" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -813,14 +788,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <element signature="e#89#90#0" expanded="false" />
-            <element signature="e#108#109#0" expanded="false" />
-            <element signature="e#144#145#0" expanded="false" />
-            <element signature="e#169#170#0" expanded="false" />
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#258#259#0" expanded="false" />
-            <element signature="e#481#482#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,14 +845,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <element signature="e#89#90#0" expanded="false" />
-            <element signature="e#108#109#0" expanded="false" />
-            <element signature="e#144#145#0" expanded="false" />
-            <element signature="e#169#170#0" expanded="false" />
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#258#259#0" expanded="false" />
-            <element signature="e#481#482#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -944,14 +907,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding>
-            <element signature="e#89#90#0" expanded="false" />
-            <element signature="e#108#109#0" expanded="false" />
-            <element signature="e#144#145#0" expanded="false" />
-            <element signature="e#169#170#0" expanded="false" />
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#258#259#0" expanded="false" />
-            <element signature="e#481#482#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1022,14 +979,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding>
-            <element signature="e#89#90#0" expanded="false" />
-            <element signature="e#108#109#0" expanded="false" />
-            <element signature="e#144#145#0" expanded="false" />
-            <element signature="e#169#170#0" expanded="false" />
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#258#259#0" expanded="false" />
-            <element signature="e#481#482#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1100,14 +1051,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding>
-            <element signature="e#89#90#0" expanded="false" />
-            <element signature="e#108#109#0" expanded="false" />
-            <element signature="e#144#145#0" expanded="false" />
-            <element signature="e#169#170#0" expanded="false" />
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#258#259#0" expanded="false" />
-            <element signature="e#481#482#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1159,46 +1104,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/pacman/board/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="10" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/pacman/board/PacMan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#89#90#0" expanded="false" />
-            <element signature="e#108#109#0" expanded="false" />
-            <element signature="e#144#145#0" expanded="false" />
-            <element signature="e#169#170#0" expanded="false" />
-            <element signature="e#238#239#0" expanded="false" />
-            <element signature="e#258#259#0" expanded="false" />
-            <element signature="e#481#482#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/pacman/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/pacman-l1.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_40/javafx-src.zip!/javafx/stage/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#45880#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3815#3816#0" expanded="false" />
+            <element signature="e#3880#3881#0" expanded="false" />
+            <element signature="e#6040#6041#0" expanded="false" />
+            <element signature="e#6072#6073#0" expanded="false" />
+            <element signature="e#6305#6306#0" expanded="false" />
+            <element signature="e#6354#6355#0" expanded="false" />
+            <element signature="e#9755#9756#0" expanded="false" />
+            <element signature="e#9790#9791#0" expanded="false" />
+            <element signature="e#10606#10607#0" expanded="false" />
+            <element signature="e#10641#10642#0" expanded="false" />
+            <element signature="e#14360#14361#0" expanded="false" />
+            <element signature="e#14403#14404#0" expanded="false" />
+            <element signature="e#14456#14457#0" expanded="false" />
+            <element signature="e#14498#14499#0" expanded="false" />
+            <element signature="e#14551#14552#0" expanded="false" />
+            <element signature="e#14591#14592#0" expanded="false" />
+            <element signature="e#16374#16375#0" expanded="false" />
+            <element signature="e#16440#16441#0" expanded="false" />
+            <element signature="e#16964#16965#0" expanded="false" />
+            <element signature="e#17021#17022#0" expanded="false" />
+            <element signature="e#17395#17396#0" expanded="false" />
+            <element signature="e#17452#17453#0" expanded="false" />
+            <element signature="e#20385#20386#0" expanded="false" />
+            <element signature="e#20427#20428#0" expanded="false" />
+            <element signature="e#20480#20481#0" expanded="false" />
+            <element signature="e#20518#20519#0" expanded="false" />
+            <element signature="e#21363#21364#0" expanded="false" />
+            <element signature="e#21407#21408#0" expanded="false" />
+            <element signature="e#21447#21448#0" expanded="false" />
+            <element signature="e#21507#21508#0" expanded="false" />
+            <element signature="e#21932#21933#0" expanded="false" />
+            <element signature="e#21990#21991#0" expanded="false" />
+            <element signature="e#22059#22060#0" expanded="false" />
+            <element signature="e#22115#22116#0" expanded="false" />
+            <element signature="e#22512#22513#0" expanded="false" />
+            <element signature="e#22563#22564#0" expanded="false" />
+            <element signature="e#22981#22982#0" expanded="false" />
+            <element signature="e#23077#23078#0" expanded="false" />
+            <element signature="e#23146#23147#0" expanded="false" />
+            <element signature="e#23204#23205#0" expanded="false" />
+            <element signature="e#23273#23274#0" expanded="false" />
+            <element signature="e#23336#23337#0" expanded="false" />
+            <element signature="e#23696#23697#0" expanded="false" />
+            <element signature="e#23761#23762#0" expanded="false" />
+            <element signature="e#24010#24011#0" expanded="false" />
+            <element signature="e#24100#24101#0" expanded="false" />
+            <element signature="e#24169#24170#0" expanded="false" />
+            <element signature="e#24227#24228#0" expanded="false" />
+            <element signature="e#24296#24297#0" expanded="false" />
+            <element signature="e#24354#24355#0" expanded="false" />
+            <element signature="e#24695#24696#0" expanded="false" />
+            <element signature="e#24756#24757#0" expanded="false" />
+            <element signature="e#24999#25000#0" expanded="false" />
+            <element signature="e#25087#25088#0" expanded="false" />
+            <element signature="e#25156#25157#0" expanded="false" />
+            <element signature="e#25214#25215#0" expanded="false" />
+            <element signature="e#25283#25284#0" expanded="false" />
+            <element signature="e#25339#25340#0" expanded="false" />
+            <element signature="e#25689#25690#0" expanded="false" />
+            <element signature="e#25752#25753#0" expanded="false" />
+            <element signature="e#25998#25999#0" expanded="false" />
+            <element signature="e#26087#26088#0" expanded="false" />
+            <element signature="e#26156#26157#0" expanded="false" />
+            <element signature="e#26214#26215#0" expanded="false" />
+            <element signature="e#26283#26284#0" expanded="false" />
+            <element signature="e#26340#26341#0" expanded="false" />
+            <element signature="e#26880#26881#0" expanded="false" />
+            <element signature="e#26943#26944#0" expanded="false" />
+            <element signature="e#27189#27190#0" expanded="false" />
+            <element signature="e#27278#27279#0" expanded="false" />
+            <element signature="e#27347#27348#0" expanded="false" />
+            <element signature="e#27405#27406#0" expanded="false" />
+            <element signature="e#27474#27475#0" expanded="false" />
+            <element signature="e#27531#27532#0" expanded="false" />
+            <element signature="e#31963#31964#0" expanded="false" />
+            <element signature="e#32005#32006#0" expanded="false" />
+            <element signature="e#32058#32059#0" expanded="false" />
+            <element signature="e#32098#32099#0" expanded="false" />
+            <element signature="e#32747#32748#0" expanded="false" />
+            <element signature="e#32779#32780#0" expanded="false" />
+            <element signature="e#33023#33024#0" expanded="false" />
+            <element signature="e#33056#33057#0" expanded="false" />
+            <element signature="e#34491#34492#0" expanded="false" />
+            <element signature="e#34543#34544#0" expanded="false" />
+            <element signature="e#34600#34601#0" expanded="false" />
+            <element signature="e#34654#34655#0" expanded="false" />
+            <element signature="e#39728#39729#0" expanded="false" />
+            <element signature="e#39782#39783#0" expanded="false" />
+            <element signature="e#39993#39994#0" expanded="false" />
+            <element signature="e#40037#40038#0" expanded="false" />
+            <element signature="e#41229#41230#0" expanded="false" />
+            <element signature="e#41275#41276#0" expanded="false" />
+            <element signature="e#41306#41307#0" expanded="false" />
+            <element signature="e#41333#41334#0" expanded="false" />
+            <element signature="e#42375#42376#0" expanded="false" />
+            <element signature="e#42420#42421#0" expanded="false" />
+            <element signature="e#42945#42946#0" expanded="false" />
+            <element signature="e#42976#42977#0" expanded="false" />
+            <element signature="e#45368#45369#0" expanded="false" />
+            <element signature="e#45399#45400#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/board.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_40/javafx-src.zip!/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.021493213">
+          <caret line="621" column="21" selection-start-line="621" selection-start-column="21" selection-end-line="621" selection-end-column="21" />
+          <folding>
+            <element signature="e#24420#24421#0" expanded="false" />
+            <element signature="e#24479#24480#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/pacman/board/Map.java">
@@ -1209,44 +1244,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_40/javafx-src.zip!/javafx/scene/Scene.java">
+    <entry file="file://$PROJECT_DIR$/src/game/pacman/board/Sprite.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="621" column="21" selection-start-line="621" selection-start-column="21" selection-end-line="621" selection-end-column="21" />
-          <folding>
-            <element signature="e#24420#24421#0" expanded="true" />
-            <element signature="e#24479#24480#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_40/javafx-src.zip!/javafx/stage/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/board.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/pacman/board/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2580647">
-          <caret line="115" column="29" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/pacman/board/PacMan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.32258">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding>
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/pacman/board/HUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7414501">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/pacman/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/pacman/board/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8041237">
+          <caret line="117" column="37" selection-start-line="117" selection-start-column="37" selection-end-line="117" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

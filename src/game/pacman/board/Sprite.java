@@ -21,7 +21,7 @@ public abstract class Sprite extends StackPane {
 	private int frame;
 	private double speed;
 	private double maxX, maxY;
-	private double prevX, prevY;
+	protected double prevX, prevY;
 
 	private static String[][] getDefaultFileNames(String name) {
 		char[] tc = { 'l', 'r', 'u', 'd' };
