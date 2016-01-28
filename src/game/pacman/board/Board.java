@@ -1,6 +1,4 @@
 package game.pacman.board;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -12,11 +10,7 @@ import javafx.scene.shape.Rectangle;
 
 public class Board extends Pane {
 
-	//Marge pour les coins
-	private final int COINS_PADDING_UP = 3;
-    private final int COINS_PADDING_DOWN = 2;
-    private final int COINS_PADDING_LEFT = 3;
-    private final int COINS_PADDING_RIGHT = 2;
+
 	private Collection<Sprite> mobile;
 	private ArrayList<Sprite> coins;
 	private PacMan pacman;
@@ -24,9 +18,6 @@ public class Board extends Pane {
 	private HUD hud;
 	private boolean startedMoving;
 	private boolean inited;
-
-	private Rectangle posHelper;
-	private Rectangle posHelper2;
 
 	public Board() {
 
@@ -43,30 +34,23 @@ public class Board extends Pane {
 				new Ghost("clyde", 106, 134),
 				pacman = new PacMan(120, 204)
 		}));
-		posHelper = new Rectangle(8,8);
-		posHelper2 = new Rectangle(8,8);
-		posHelper2.setFill(Color.GREEN);
-		posHelper.setFill(Color.RED);
-		getChildren().add(posHelper);
-		getChildren().add(posHelper2);
 		this.getChildren().addAll(coins);
 		this.getChildren().addAll(mobile);
-		this.getChildren().add((hud = new HUD(256,288)));
+		this.getChildren().add((hud = new HUD(256, 288)));
+		hud.setPacmanLives(pacman.getLives());
 		map.setLayoutX(0);
 		map.setLayoutY(0);
 		startedMoving = inited = false;
 		//testMapData();
-
-		hud.showMessage("WIN");
 	}
 
 	/**
 	 * Créer et ajoute les coins à la scène
 	 */
 	private void createCoins(){
-		for(int i = COINS_PADDING_UP;i < map.getMapData().length- COINS_PADDING_DOWN; i++){
-			for(int j = COINS_PADDING_LEFT; j< map.getMapData()[0].length- COINS_PADDING_RIGHT;j++){
-				if(map.getMapData()[i][j] == 0)
+		for(int i = 0;i < map.getMapData().length; i++){
+			for(int j = 0; j< map.getMapData()[0].length;j++){
+				if(map.getMapData()[i][j] == Map.COIN_CODE)
 				{
 					coins.add(new Coin(j * 8 + 2, i * 8 + 2));
 				}
@@ -80,7 +64,7 @@ public class Board extends Pane {
 	private void testMapData(){
 		for(int i =0 ;i < map.getMapData().length ; i++){
 			for(int j = 0; j< map.getMapData()[0].length;j++){
-				if(map.getMapData()[i][j] == 1)
+				if(map.getMapData()[i][j] == Map.WALL_CODE)
 				{
 					Rectangle r = new Rectangle(j*8,i*8,8,8);
 					r.setFill(Color.BLUE);
@@ -101,21 +85,37 @@ public class Board extends Pane {
 		inited = true;
 	}
 
-	private void resetGame()
+	private void resetMobiles()
 	{
-		startedMoving = inited = false;
-		getChildren().removeAll(mobile);
-		mobile.clear();
-		pacman.setLayoutY(120);
-		pacman.setLayoutX(204);
-		mobile.addAll(Arrays.asList(new Sprite[]{
-				new Ghost("inky", 133, 134),
-				new Ghost("pinky", 124, 134),
-				new Ghost("bl3inky", 115, 134),
-				new Ghost("clyde", 106, 134),
-				pacman
-		}));
-		getChildren().addAll(mobile);
+		for(Sprite s : mobile) {
+			s.resetPos();
+			s.setSpeed(0.0);
+		}
+		inited = false;
+		startedMoving = false;
+	}
+
+	private void hardReset()
+	{
+		resetMobiles();
+		getChildren().removeAll(coins);
+		coins.clear();
+		createCoins();
+		getChildren().addAll(coins);
+		pacman.setLives(PacMan.MAX_LIFE);
+		hud.setPacmanLives(pacman.getLives());
+		hud.setCoinsEaten(0);
+	}
+	private void gameOver()
+	{
+		hardReset();
+		hud.showMessage("GAME OVER, press key to restart",12);
+	}
+
+	private void win()
+	{
+		hardReset();
+		hud.showMessage("YOU WON, press key to restart",12);
 	}
 
 	public void animateAndMove() {
@@ -133,10 +133,6 @@ public class Board extends Pane {
 			s.move();
 			if(s.getBounds().intersects(map.getBoudingBox(s.getDirection(), s.getLayoutX(), s.getLayoutY()))) {
 				s.moveBack();
-				if(s instanceof PacMan)
-				{
-					((PacMan)s).stopPlayChompSound();
-				}
 			}
 		}
 
@@ -148,7 +144,12 @@ public class Board extends Pane {
 				{
 					pacman.decreaseLife();
 					hud.setPacmanLives(pacman.getLives());
-					resetGame();
+					if(pacman.isAlive())
+					{
+						resetMobiles();
+					}else{
+						gameOver();
+					}
 				}
 			}
 		}
@@ -162,8 +163,12 @@ public class Board extends Pane {
 				coins.remove(i);
 			}
 		}
-	}
 
+		if(coins.isEmpty())
+		{
+			win();
+		}
+	}
 
 	public void handleKeyPressed(KeyCode keyCode) {
 		// System.err.println("key press: " + keyCode);
@@ -184,5 +189,6 @@ public class Board extends Pane {
 			default:
 				break;
 		}
+		hud.clearMessage();
 	}
 }

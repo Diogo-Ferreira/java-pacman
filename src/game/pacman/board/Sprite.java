@@ -22,6 +22,7 @@ public abstract class Sprite extends StackPane {
 	private double speed;
 	private double maxX, maxY;
 	protected double prevX, prevY;
+	protected double startX,startY;
 
 	private static String[][] getDefaultFileNames(String name) {
 		char[] tc = { 'l', 'r', 'u', 'd' };
@@ -44,6 +45,8 @@ public abstract class Sprite extends StackPane {
 		image = new ImageView[4][];
 		setLayoutX(prevX = x);
 		setLayoutY(prevY = y);
+		startX = x;
+		startY = y;
 
 		// names.length == 4, otherwise out-of-bounds exception below
 		for (int d = 0; d < 4; d++) {
@@ -130,5 +133,11 @@ public abstract class Sprite extends StackPane {
 		BoundingBox b = new BoundingBox(this.getLayoutX()+4,this.getLayoutY()+4,8,8);
 		return (Bounds)b;
 		//return this.getBoundsInParent();
+	}
+
+	public void resetPos()
+	{
+		setLayoutY(startY);
+		setLayoutX(startX);
 	}
 }

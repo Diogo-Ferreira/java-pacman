@@ -1,9 +1,11 @@
 package game.pacman.board;
 import game.pacman.board.Sprite.Direction;
 import javafx.geometry.BoundingBox;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelReader;
 import javafx.scene.paint.Color;
+
 
 
 /**
@@ -11,45 +13,76 @@ import javafx.scene.paint.Color;
  */
 public class Map extends ImageView {
 
-    private int[][] mapData;
+    //Code d'objets sur la carte
+    public final static int NO_COLL_CODE = 0;
+    public final static int WALL_CODE = 1;
+    public final static int COIN_CODE = 2;
 
-    private final int COLLISION_TILE_WIDTH = 8;
-    private final int COLLISION_TILE_HEIGHT = 8;
-    private final Color COLLISION_COLOR = Color.web("#2121de");
+    //Constantes
+    private final int COLL_TILE_WIDTH = 8;
+    private final int COLL_TILE_HEIGHT = 8;
+    private final Color COLL_COLOR = Color.web("#2121de");
+    private final Color COINS_COLOR = Color.web("#2aff00");
+
+    private int[][] mapData;
+    private Image coinsLayer;
 
     public Map(String imgPath)
     {
         super(imgPath);
-        mapData = new int[(int)getImage().getHeight() / COLLISION_TILE_HEIGHT][(int)getImage().getWidth() / COLLISION_TILE_WIDTH];
+        mapData = new int[(int)getImage().getHeight() / COLL_TILE_HEIGHT][(int)getImage().getWidth() / COLL_TILE_WIDTH];
+        coinsLayer = new Image("board-coins-layer.png");
         initMapData();
     }
 
+    /**
+     * Construit le tableau de données mapData suivant le niveau
+     */
     private void initMapData(){
-        PixelReader pixReader = getImage().getPixelReader();
-
-        //Parcours chaque sous case de 8x8 par exemple
-        for(int map_y = 0;map_y < getImage().getHeight(); map_y+= COLLISION_TILE_HEIGHT){
-            for(int map_x =0;map_x<getImage().getWidth(); map_x+= COLLISION_TILE_WIDTH){
-
-                //Ensuite chaque pixel afin de savoir s'il contient du bleu
-                boolean hasBlue = false;
-                for(int tile_x = map_x; tile_x < map_x + COLLISION_TILE_WIDTH && !hasBlue ; tile_x++){
-                    for(int tile_y = map_y;tile_y < map_y + COLLISION_TILE_HEIGHT; tile_y++){
-                        if(pixReader.getColor(tile_x,tile_y).equals(COLLISION_COLOR)){
-                            hasBlue = true;
-                        }
-                    }
+        for(int x = 0;x < getImage().getHeight(); x += COLL_TILE_HEIGHT) {
+            for(int y =0;y<getImage().getWidth(); y+= COLL_TILE_WIDTH){
+                if(hasColor(y,x,COINS_COLOR,coinsLayer))
+                {
+                    mapData[x / COLL_TILE_HEIGHT][y / COLL_TILE_WIDTH] = COIN_CODE;
                 }
-                if(hasBlue) {
-                    mapData[map_y / COLLISION_TILE_HEIGHT][map_x / COLLISION_TILE_WIDTH] = 1;
+                else if(hasColor(y,x, COLL_COLOR,getImage())) {
+                    mapData[x / COLL_TILE_HEIGHT][y / COLL_TILE_WIDTH] = WALL_CODE;
                 }
                 else
-                    mapData[map_y/COLLISION_TILE_HEIGHT][map_x/COLLISION_TILE_WIDTH] = 0;
+                    mapData[x/ COLL_TILE_HEIGHT][y/ COLL_TILE_WIDTH] = NO_COLL_CODE;
             }
         }
     }
 
+    /**
+     * Vérifie si le sous-carré (de taille de tuile collision) de l'image contient la couleur spécifier
+     * @param startX position
+     * @param startY position
+     * @param color couleur à chercher
+     * @param imgToRead image dans laquel chercher
+     * @return true si la couleur est présente, false sinon
+     */
+    private boolean hasColor(int startX,int startY,Color color,Image imgToRead)
+    {
+        PixelReader pixReader = imgToRead.getPixelReader();
+        boolean hasColor = false;
+        for(int x = startX; x < startX + COLL_TILE_WIDTH && !hasColor ; x++){
+            for(int y = startY;y < startY + COLL_TILE_HEIGHT && !hasColor; y++){
+                if(pixReader.getColor(x,y).equals(color)){
+                    hasColor = true;
+                }
+            }
+        }
+        return hasColor;
+    }
 
+    /**
+     * Retourne le mur à la position du pacman
+     * @param dir direction dans laquel le pacman se balade
+     * @param x
+     * @param y
+     * @return le mur si le pacman est sur celui-ci, sinon un mur bidon hors de la carte
+     */
     public BoundingBox getBoudingBox(Direction dir,double x,double y){
         int x_offset=0;
         int y_offset=0;
@@ -69,11 +102,11 @@ public class Map extends ImageView {
         }
 
         //Position en tiles
-        int xPosInTile = (int) ((x+x_offset) / COLLISION_TILE_WIDTH);
-        int yPosInTile = (int)((y+y_offset) / COLLISION_TILE_HEIGHT);
+        int xPosInTile = (int) ((x+x_offset) / COLL_TILE_WIDTH);
+        int yPosInTile = (int)((y+y_offset) / COLL_TILE_HEIGHT);
 
         //Le pacman va t'il contre un mur ?
-        if(mapData[yPosInTile][xPosInTile] == 1){
+        if(mapData[yPosInTile][xPosInTile] == WALL_CODE){
             return new BoundingBox(x-4,y-4,8,8);
         }else{
             return new BoundingBox(1000,1000,1,1);
@@ -83,9 +116,5 @@ public class Map extends ImageView {
 
     public int[][] getMapData() {
         return mapData;
-    }
-
-    public void setMapData(int[][] mapData) {
-        this.mapData = mapData;
     }
 }
