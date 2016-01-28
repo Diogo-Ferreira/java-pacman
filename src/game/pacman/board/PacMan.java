@@ -1,7 +1,7 @@
 package game.pacman.board;
 public class PacMan extends Sprite {
 
-	public final static int MAX_LIFE = 3;
+	public final static int MAX_LIFE = 3; //Nombre de vies au début du jeu
 	private int lives = MAX_LIFE;
 
 	public PacMan(double x, double y) {

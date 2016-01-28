@@ -85,6 +85,10 @@ public class Board extends Pane {
 		inited = true;
 	}
 
+	/**
+	 * repositionne les mobiles à leurs position initiales,
+	 * puis met le jeu en stand by jusqu'à une pression du clavier
+	 */
 	private void resetMobiles()
 	{
 		for(Sprite s : mobile) {
@@ -95,6 +99,9 @@ public class Board extends Pane {
 		startedMoving = false;
 	}
 
+	/**
+	 * Redémarre le jeu complet
+	 */
 	private void hardReset()
 	{
 		resetMobiles();
@@ -106,6 +113,7 @@ public class Board extends Pane {
 		hud.setPacmanLives(pacman.getLives());
 		hud.setCoinsEaten(0);
 	}
+
 	private void gameOver()
 	{
 		hardReset();
@@ -128,16 +136,14 @@ public class Board extends Pane {
 		if (!startedMoving)
 			return;
 
-		//Collisions avec les murs
+		//Collisions avec les murs et pacman <-> ghosts
 		for (Sprite s : mobile) {
 			s.move();
 			if(s.getBounds().intersects(map.getBoudingBox(s.getDirection(), s.getLayoutX(), s.getLayoutY()))) {
 				s.moveBack();
 			}
-		}
 
-		//Collisions pacman et fantomes
-		for(Sprite s: mobile){
+			//Pas de else if, car les 2 cas doivent être géré
 			if(!(s instanceof PacMan))
 			{
 				if(s.getBounds().intersects(pacman.getBounds()))
@@ -153,8 +159,7 @@ public class Board extends Pane {
 				}
 			}
 		}
-
-		//Collisions pacman coins
+		//Collisions pacman coins, pas de foreach car ont doit modifier la collections
 		for(int i=0;i<coins.size();i++)
 		{
 			if(pacman.getBounds().intersects(coins.get(i).getBoundsInParent())) {

@@ -41,6 +41,7 @@ public class Map extends ImageView {
     private void initMapData(){
         for(int x = 0;x < getImage().getHeight(); x += COLL_TILE_HEIGHT) {
             for(int y =0;y<getImage().getWidth(); y+= COLL_TILE_WIDTH){
+
                 if(hasColor(y,x,COINS_COLOR,coinsLayer))
                 {
                     mapData[x / COLL_TILE_HEIGHT][y / COLL_TILE_WIDTH] = COIN_CODE;
@@ -48,8 +49,9 @@ public class Map extends ImageView {
                 else if(hasColor(y,x, COLL_COLOR,getImage())) {
                     mapData[x / COLL_TILE_HEIGHT][y / COLL_TILE_WIDTH] = WALL_CODE;
                 }
-                else
-                    mapData[x/ COLL_TILE_HEIGHT][y/ COLL_TILE_WIDTH] = NO_COLL_CODE;
+                else {
+                    mapData[x / COLL_TILE_HEIGHT][y / COLL_TILE_WIDTH] = NO_COLL_CODE;
+                }
             }
         }
     }

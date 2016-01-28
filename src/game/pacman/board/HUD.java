@@ -30,7 +30,6 @@ public class HUD extends Group {
         this.coinsEatenLabel.setFill(Color.WHITE);
         this.coinsEatenLabel.setStyle("-fx-font-weight:bold");
         this.getChildren().add(coinsEatenLabel);
-
         pacmanBar = new Group();
         this.getChildren().add(pacmanBar);
         this.fillPacmanBar();
@@ -38,6 +37,7 @@ public class HUD extends Group {
 
     }
 
+    //Remplit la barre de vie, suivant le nombre de vie actuel
     private void fillPacmanBar()
     {
         Text lifeLbl;
